@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.13</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.example</groupId>
+    <artifactId>yunxi-code</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>yunxi-code</name>
+    <description>yunxi-code</description>
+
+    <modules>
+        <module>commons</module>
+        <module>yunxi</module>
+    </modules>
+    <properties>
+        <mybatis-plus-core>3.5.2</mybatis-plus-core>
+        <mybatis-plus-extension>3.5.2</mybatis-plus-extension>
+        <mybatisplus-spring-boot-starter>1.0.5</mybatisplus-spring-boot-starter>
+        <java.version>1.8</java.version>
+        <javax.persistence>2.2</javax.persistence>
+        <jackson.annotations>2.11.3</jackson.annotations>
+        <jackson.dataformat.xml>2.9.8</jackson.dataformat.xml>
+        <redis>3.0.9</redis>
+        <commons-beanutils>1.9.4</commons-beanutils>
+        <commons-pool2>2.9.0</commons-pool2>
+        <spring-jdbc>5.3.2</spring-jdbc>
+        <spring-boot>3.1.2</spring-boot>
+        <spring-data-redis>2.4.15</spring-data-redis>
+        <lombok>1.18.18</lombok>
+        <hutool.core>5.8.11</hutool.core>
+        <fastjson.alibaba>2.0.37</fastjson.alibaba>
+        <pageHelp.version>1.4.6</pageHelp.version>
+        <spring-cloud.version>2020.0.6</spring-cloud.version>
+        <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version>
+
+        <!--nacos 2.0.3-->
+        <spring-cloud-alibaba-dependencies.version>2.2.7.RELEASE</spring-cloud-alibaba-dependencies.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+            <version>${spring.cloud.alibaba.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <!--引入springcloud-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>${spring-cloud.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.4.13</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>io.spring.platform</groupId>-->
+<!--                <artifactId>platform-bom</artifactId>-->
+<!--                <version>${spring-platform.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

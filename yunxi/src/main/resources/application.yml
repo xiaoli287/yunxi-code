@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        shared-dataids: yunxi
+        refreshable-dataids: yunxi
+        server-addr: ${spring.cloud.nacos.config.server-addr}
+        file-extension: ${spring.cloud.nacos.config.file-extension}
+        namespace: ${spring.cloud.nacos.config.namespace}
+    sentinel:
+      transport:
+        dashboard: ${spring.cloud.sentinel.transport.dashboard}
+      eager: ${spring.cloud.sentinel.eager}
+  application:
+    name: yunxi
+  main:
+    allow-bean-definition-overriding: true
