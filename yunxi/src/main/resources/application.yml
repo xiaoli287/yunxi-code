@@ -2,8 +2,6 @@ spring:
   cloud:
     nacos:
       config:
-        shared-dataids: yunxi
-        refreshable-dataids: yunxi
         server-addr: ${spring.cloud.nacos.config.server-addr}
         file-extension: ${spring.cloud.nacos.config.file-extension}
         namespace: ${spring.cloud.nacos.config.namespace}
