@@ -2,10 +2,12 @@ package com.goodidea.yunxi.controller;
 
 import com.goodidea.commons.dto.RestResponse;
 import com.goodidea.yunxi.service.ICpCouponChannelService;
+import com.goodidea.yunxi.service.impl.CpCouponChannelServiceImpl;
 import com.goodidea.yunxi.vo.CpCouponChannelVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -17,7 +19,7 @@ import java.util.List;
 public class CpCouponChannelController {
 
     @Autowired
-    ICpCouponChannelService cpCouponChannelService;
+    private CpCouponChannelServiceImpl cpCouponChannelService;
 
 
     @ApiOperation(value = "用户测试",notes = "用户测试notes")

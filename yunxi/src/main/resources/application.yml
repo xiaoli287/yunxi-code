@@ -1,15 +1,44 @@
+
+#微服务配置
 spring:
+  application:
+    name: yunxi # 服务名content-api-dev.yaml
   cloud:
     nacos:
-      config:
-        server-addr: ${spring.cloud.nacos.config.server-addr}
-        file-extension: ${spring.cloud.nacos.config.file-extension}
-        namespace: ${spring.cloud.nacos.config.namespace}
-    sentinel:
-      transport:
-        dashboard: ${spring.cloud.sentinel.transport.dashboard}
-      eager: ${spring.cloud.sentinel.eager}
-  application:
-    name: yunxi
-  main:
-    allow-bean-definition-overriding: true
+      server-addr: 127.0.0.1:8848
+      discovery: #服务注册相关配置
+        namespace: test_yunxi
+        group: DEFAULT_GROUP
+      #        server-addr: 127.0.0.1:8848
+      config: #配置文件相关配置
+        namespace: test_yunxi
+        group: DEFAULT_GROUP
+        file-extension: yaml
+        refresh-enabled: true
+
+
+#server:
+#  port: 8083
+#
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/test_xxl?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=GMT
+#    username: root
+#    password: root
+#  application:
+#    name: yunxi
+#
+##注册中心的配置  向哪个注册中心进行配置
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:9997/eureka/
+#
+#
+#mybatis-plus:
+#  mapper-locations: classpath*:/mapper/*Mapper.xml
+#  type-aliases-package: com.goodidea.yunxi.entity
+#  configuration:
+#    #驼峰命名规则
+#    map-underscore-to-camel-case: true

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.goodidea.yunxi.entity.CpCouponChannel;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.goodidea.yunxi.vo.CpCouponChannelVo;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
