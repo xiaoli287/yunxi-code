@@ -1,11 +1,13 @@
 package com.goodidea.yunxi.controller;
 
 import com.goodidea.commons.dto.RestResponse;
+import com.goodidea.yunxi.config.RabbitMQconfig;
 import com.goodidea.yunxi.service.ICpCouponChannelService;
 import com.goodidea.yunxi.service.impl.CpCouponChannelServiceImpl;
 import com.goodidea.yunxi.vo.CpCouponChannelVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -45,6 +47,15 @@ public class CpCouponChannelController {
     @PostMapping("/add")
     RestResponse<Object> add(@RequestBody  @Valid CpCouponChannelVo cpCouponChannelVo) {
         cpCouponChannelService.insertInfo(cpCouponChannelVo);
+        return new RestResponse<>();
+    }
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
+    @GetMapping("/testa")
+    RestResponse<Object> testA(@RequestParam String msg){
+        rabbitTemplate.convertAndSend(RabbitMQconfig.BUSINESS_EXCHANGE_NAME,"",msg);
         return new RestResponse<>();
     }
 }

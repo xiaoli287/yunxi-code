@@ -9,13 +9,6 @@
     </parent>
 
     <artifactId>nacos-config</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>nacos-config</name>
-    <description>nacos-config</description>
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
     <dependencies>
         <!-- 选用nacos时打开-->
         <dependency>
@@ -31,13 +24,5 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

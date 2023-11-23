@@ -4,3 +4,14 @@ spring:
     url: jdbc:mysql://127.0.0.1:3763/center_data?useUnicode=true&zeroDateTimeBehavior=CONVERT_TO_NULL&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username:
     password:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: 123456
+
+#
+#  spring.rabbitmq.host=192.168.0.86
+#  spring.rabbitmq.port=5672
+#  spring.rabbitmq.username=admin
+#  spring.rabbitmq.password=123456

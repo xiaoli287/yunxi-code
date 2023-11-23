@@ -1,5 +1,4 @@
-server:
-  port: 20000
+
 #微服务配置
 spring:
   application:
@@ -7,19 +6,21 @@ spring:
   cloud:
     nacos:
       discovery: #服务注册相关配置
-        server-addr: 192.168.22.210:31010
-        namespace: 0468c9b7-dfdc-449e-91d9-c67326f06b47
+        server-addr: ${spring.cloud.nacos.config.server-addr}
+        namespace: ${spring.cloud.nacos.config.namespace}
         group: DEFAULT_GROUP
+        username: ${spring.cloud.nacos.config.username}
+        password: ${spring.cloud.nacos.config.password}
       #        server-addr: 127.0.0.1:8848
       config: #配置文件相关配置
-        server-addr: 192.168.22.210:31010
-        namespace: 0468c9b7-dfdc-449e-91d9-c67326f06b47
+        server-addr: 127.0.0.1:8848
+        namespace: test_yunxi
         group: DEFAULT_GROUP
         name: yunxi
         file-extension: yaml
         refresh-enabled: true
-        username:
-        password:
+        username: nacos
+        password: nacos
 logging:
   level:
     root: INFO
@@ -43,11 +44,11 @@ logging:
 #      defaultZone: http://localhost:9997/eureka/
 #
 #
-mybatis-plus:
-  mapper-locations: classpath*:/mapper/*Mapper.xml
-  type-aliases-package: com.goodidea.yunxi.entity
-  configuration:
-    #驼峰命名规则
-    map-underscore-to-camel-case: true
+#mybatis-plus:
+#  mapper-locations: classpath*:/mapper/*Mapper.xml
+#  type-aliases-package: com.goodidea.yunxi.entity
+#  configuration:
+#    #驼峰命名规则
+#    map-underscore-to-camel-case: true
 
 
